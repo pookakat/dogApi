@@ -29,10 +29,15 @@ function daAjax(url){
 $('select').on('change', function(event){
     var daWeight = $('option:selected').attr('data-weight');
     var breed = $('option:selected').text();
-    breedStuff(breed);
-    daWeightArray = getWeights(daWeight);
+    afterSelection(breed, daWeight);
     daAverageWeight = averageWeight(daWeightArray);
-    $('.question').hide();
+});
+
+$('#other').on('click', function(event){
+    event.preventDefault();
+    var daWeight = "10 - 200";
+    var breed = 'Other Breed';
+    afterSelection(breed, daWeight);
 });
 
 $('.red').click(function(event){
@@ -89,18 +94,19 @@ function averageWeight(daWeightArray){
     return averageWeight;
 }
 
-function decideCategory(){
+function decideCategory(weights){
     var category = '';
-    if (daAverageWeight <= 12){
+    
+    if (weights <= 12){
         category='toy';
     }
-    else if (daAverageWeight < 25){
+    else if (weights < 25){
         category = 'small';
     }
-    else if (daAverageWeight < 50){
+    else if (weights < 50){
         category = 'medium';
     }
-    else if (daAverageWeight < 100){
+    else if (weights < 100){
         category = 'large';
     }
     else{
@@ -112,6 +118,12 @@ function decideCategory(){
 
 
 //window altering stuff
+function afterSelection(breed, daWeight){
+    breedStuff(breed);
+    daWeightArray = getWeights(daWeight);
+    $('.question').hide();
+}
+
 function breedStuff(breed){
     $('select').hide();
     $('#breed-verification').show();
@@ -140,7 +152,13 @@ function daOverweightMath(){
 }
 
 function petSpecific(){
-    var breedCategory = decideCategory();
+    if (daBreed==="Other Breed"){
+        var checkSize = currentWeight;
+    }
+    else{
+        var checkSize = daAverageWeight;
+    }
+    var breedCategory = decideCategory(checkSize);
     $('#dog-info-breed').prepend('Your dog is a '+ daBreed + ', and your dog weighs ');
     $('#dog-info-weight').html(currentWeight);
     $('#dog-info-breed').append(' pounds.');
