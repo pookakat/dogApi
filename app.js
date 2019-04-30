@@ -81,7 +81,6 @@ function getWeights(daWeight){
     var range = daWeight.split("-");
     range[0] = parseInt(range[0].trim());
     range[1] = parseInt(range[1].trim());
-    console.log(range[0], range[1]);
     return range;
 }
 
@@ -126,7 +125,6 @@ function weightStuff(){
 }
 
 function daOverweightMath(){
-    console.log(currentWeight, daWeightArray);
     if (currentWeight <= daWeightArray[1]){
         if (currentWeight >= daWeightArray[0]){
             $('#dog-info-weight').addClass('green');
@@ -150,7 +148,6 @@ function petSpecific(){
 }
 
 function amazonCall(value){
-    console.log(value);
     if (value === 'default'){        
         adNumber = "cb16da6f-a242-41e1-b8b6-27ccbbf85082"
     }
