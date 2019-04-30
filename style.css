@@ -1,0 +1,46 @@
+#breed-verification{
+   display: none; 
+}
+#weight-verification{
+    display: none;
+}
+#current-weight{
+    display:none;
+}
+#body-condition-score{
+    display: none;
+}
+#record-weight{
+    background-color: #1E91D9;
+    color: white;
+}
+#yes-or-no{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    justify-content: space-around;
+    width: 10%;
+}
+.choice{
+    border: 1px solid black;
+    font-size: 25px;
+    padding: 8px;
+}
+.choice:hover{
+    text-shadow:
+        3px 3px 0 yellow,
+        -1px -1px 0 yellow,
+        1px -1px 0 yellow,
+        -1px 1px 0 yellow,
+        1px 1px 0 yellow;
+}
+
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
+.orange{
+    color: goldenrod;
+}
