@@ -189,6 +189,6 @@ function amazonCall(value){
 }
 
 function renderScript(adNumber){
-    $('body').append('<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=' + adNumber + '"></script>');
+    $('body').append('<script src="http://z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US&adInstanceId=' + adNumber + '"></script>');
     $('#amazon-stuff').html('<div id="amzn-assoc-ad-' + adNumber + '"></div>');
 }
