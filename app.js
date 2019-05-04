@@ -179,12 +179,11 @@ function amazonCall(value){
         adNumber = "93405050-3b68-4b29-b656-39f17da1c256";
     }
     else if (value === 'large'){
-        adNumber = "0c90518e-e974-440f-8b1f-655456df68fe";
+        adNumber = "79d5d92b-25ec-491c-9256-bf33765ab7e1";
     }
     else{
         adNumber = "3148660e-e283-4315-ab35-fea0d8bcc2ac";
     }
-
     renderScript(adNumber)
 }
 
